@@ -10,6 +10,18 @@ This page contains the basic concepts and data formats of the Dealsplus Coupon A
 	* [Coupon Object Inquiry](#coupon-object-inquiry)
 	* [Store Object Search](#store-object-search)
 	* [Update Coupon Save Count](#update-coupon-save-count)
+	* [Terms of Use Inquiry](#terms-of-use-inquiry)
+	* [Privacy Policy Inquiry](#privacy-policy-inquiry)      
+* [API Request URL](#api-request-url)
+ 	* [Store Selection Page](#store-selection)
+ 	* [Home Page](#home)
+ 	* [Popular Page](#popular)
+	* [My Store Page](#my-store)
+	* [Search Store Page](#search-store)
+	* [Store page](#store)
+	* [Saved Coupon Page](#update-coupon-save-count)
+	* [Terms of Use Page](#terms-of-use)
+	* [Privacy Policy Page](#privacy-policy)  
 
 ## <a name="structure-of-the-rest-url">Structure of the REST URL</a>
 URLs for Dealsplus REST API have the following structure:
@@ -66,12 +78,13 @@ The response from our REST APIs requests is in REST JSON response format.
             "coverImage": "http://img.dealspl.us",
             "couponId": 861,
             "expireTime": 2000000000,
-            "title": "",
+            "title": "5% off entire orders",
             "description": "",
             "type": "online",
             "link": "http://www.dealsplus.com/rb2.php?cid=861",
             "couponCode": "ABC-ALL5PER",
-            "subType": "code"
+            "subType": "code",
+            "shareCopy": "Hey check out this sale! 5% off entire orders  at abcink. http://www.dealsplus.com/abcink-coupons?code=861"
         },
         {
             "storeId": 567,
@@ -80,12 +93,13 @@ The response from our REST APIs requests is in REST JSON response format.
             "coverImage": "http://img.dealspl.us",
             "couponId": 5097,
             "expireTime": 2000000000,
-            "title": "",
+            "title": "Free Personalized Santa Hat (hi-quality embroidery, just pay $5.95 S/H - one per customer/address)",
             "description": "",
             "type": "online",
             "link": "http://www.dealsplus.com/rb2.php?cid=5097",
             "couponCode": "DEQDKTCLLS6Y",
-            "subType": "code"
+            "subType": "code",
+            "shareCopy": "Hey check out this sale! Free Personalized Santa Hat (hi-quality embroidery, just pay $5.95 S/H - one per customer/address)  at Threadsmith. http://www.dealsplus.com/threadsmith-coupons?code=5097"
         }
     ]
 }
@@ -125,6 +139,7 @@ Below are all the available properties of the Store Object Inquiry response.
 |storeId|Integer|Yes|The Unique Store ID|
 |storeName|String|Yes|The Store Name|
 |storeLogo|String|Yes|The URL of the Store Logo| 
+|storeUrl|String|Yes|The URL of the Store Page on Dealsplus|
 
 #####Example Response
 
@@ -139,7 +154,8 @@ Below are all the available properties of the Store Object Inquiry response.
         {
             "storeId": 9,
             "storeName": "Best Buy",
-            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif"
+            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif",
+            "storeUrl": "http://www.dealsplus.com/bestbuy-coupons"
         },
         {
        		...
@@ -195,6 +211,7 @@ Below are all the available properties of the Coupon Object Inquiry response.
 |expireTime|Integer|Yes|The expire time of this Coupon in unix timestamp format.| 
 |coverImage|String|Yes|The Cover Image URL of this Coupon.| 
 |printableImage|String|No|Url of printable Coupon Image. It only gets returned if coupon type is "inStore" and subType is "printable".| 
+|shareCopy|String|Yes|Text to send when sharing a Coupon|
 
 #####Example Response
 
@@ -213,12 +230,13 @@ Below are all the available properties of the Coupon Object Inquiry response.
             "coverImage": "http://img.dealspl.us",
             "couponId": 861,
             "expireTime": 2000000000,
-            "title": "",
+            "title": "5% off entire orders",
             "description": "",
             "type": "online",
             "link": "http://www.dealsplus.com/rb2.php?cid=861",
             "couponCode": "ABC-ALL5PER",
-            "subType": "code"
+            "subType": "code",
+            "shareCopy": "Hey check out this sale! 5% off entire orders  at abcink. http://www.dealsplus.com/abcink-coupons?code=861"
         },
         {
 			...
@@ -256,7 +274,8 @@ Below are all the available properties of the Coupon Object Inquiry response.
 |:-----|:-----|:-------|:-----------|
 |storeId|Integer|Yes|The Unique Store ID|
 |storeName|String|Yes|The Store Name|
-|storeLogo|String|Yes|The URL of the Store Logo| 
+|storeLogo|String|Yes|The URL of the Store Logo|
+|storeUrl|String|Yes|The URL of the Store Page on Dealsplus| 
 
 #####Example Response
 
@@ -270,7 +289,8 @@ Below are all the available properties of the Coupon Object Inquiry response.
         {
             "storeId": 9,
             "storeName": "Best Buy",
-            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif"
+            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif",
+            "storeUrl": "http://www.dealsplus.com/bestbuy-coupons"
         },
         {
 			...
@@ -311,4 +331,112 @@ Response returns true/false on success or error with message.
     "error": false,
     "msg": "Coupon Save Coupon Updated!"
 }
+```    
+
+### <a name="term-of-use-inquiry">Term of Use Inquiry</a>
+This API Request will return Terms of Use as a string with html encoded characters.
+####Resource URI
+
 ```
+/v4/couponapp/term
+```
+
+####Response Properties
+Response returns true/false on success or error.
+
+#####Example Response
+
+```
+{
+	msg: "",
+	errorCode: 0,
+	error: false,
+	results: "&lt;p&gt;To better serve you and to clarify our service, we have drawn up an agreement of our terms and conditions. In order to use our service, you must read and accept all of the terms and conditions of this agreement and in the Privacy Policy. If you do not agree to be bound by the terms after you read this Agreement, you may not use our service.&lt;/p&gt;&lt;br&gt; &lt;h3&gt;1. The Service and Terms&lt;/h3&gt; &lt;p&gt; Fusion Web, LLC (referred to hereafter 
+}
+```    
+
+### <a name="privacy-policy-inquiry">Privacy Policy Inquiry</a>
+This API Request will return Privacy Policy as a string with html encoded characters.
+####Resource URI
+
+```
+/v4/couponapp/privacy
+```
+
+####Response Properties
+Response returns true/false on success or error.
+
+#####Example Response
+
+```
+{
+	msg: "",
+	errorCode: 0,
+	error: false,
+	results: "&lt;p&gt;Here at dealsplus we recognize that your privacy is very important, and to keep you informed about our privacy practices we ask that you please read the guidelines described below. Keep in mind that because dealsplus is a growing website and internet technologies are constantly evolving, these guidelines are subject to change and any said changes will be posted on this page. Any material changes from current practices will be posted on the main page of this website to see ..." 
+}
+```    
+
+## <a name="api-request-url">API Request URL</a>
+This section lists all the API Request URLs with parameters for all pages on the app. All pages that requires an api call on the app are listed here.
+
+
+### <a name="store-selection">Store Selection Page</a>
+```
+/v4/couponapp/store
+```
+
+### <a name="home">Home Page</a>
+```
+/v4/couponapp/coupon?storeId={savedStoreId1|savedStoreId2|...}
+```
+
+### <a name="popular">Popular Page</a>
+```
+/v4/couponapp/coupon
+```
+
+### <a name="my-store">My Store Page</a>
+```
+/v4/couponapp/store?storeId={savedStoreId1|savedStoreId2|...}
+```
+
+### <a name="search-store">Search Store Page</a>
+```
+/v4/couponapp/search?keyword={yourSearchKeyWord}
+```
+
+### <a name="store">Store page</a>
+#####ALL Tab
+```
+/v4/couponapp/coupon?storeId={storeId}
+```
+#####ONLINE Tab
+```
+/v4/couponapp/coupon?storeId={storeId}&type=online
+```
+#####IN-STORE Tab
+```
+/v4/couponapp/coupon?storeId={storeId}&type=instore
+```
+
+### <a name="saved-coupon">Saved Coupon Page</a>
+#####ALL Tab
+```
+/v4/couponapp/coupon?couponId={savedCouponId1|savedCouponId2|...}
+```
+#####Expiring Tab
+```
+/v4/couponapp/coupon?couponId={savedCouponId1|savedCouponId2|...}&expireSoon=1
+```
+
+### <a name="term-of-use">Terms of Use Page</a>
+```
+/v4/couponapp/term
+```
+
+### <a name="privacy-policy">Privacy Policy Page</a>
+```
+/v4/couponapp/privacy
+```
+
