@@ -170,12 +170,13 @@ http://api.dealsplus.com/{Request API URL}?key={YourAPIKey}</td>
             "coverImage": "http://img.dealspl.us",
             "couponId": 861,
             "expireTime": 2000000000,
-            "title": "",
+            "title": "5% off entire orders",
             "description": "",
             "type": "online",
             "link": "http://www.dealsplus.com/rb2.php?cid=861",
             "couponCode": "ABC-ALL5PER",
-            "subType": "code"
+            "subType": "code",
+            "shareCopy": "Hey check out this sale! 5% off entire orders  at abcink. http://www.dealsplus.com/abcink-coupons?code=861"
         },
         {
             "storeId": 567,
@@ -184,12 +185,13 @@ http://api.dealsplus.com/{Request API URL}?key={YourAPIKey}</td>
             "coverImage": "http://img.dealspl.us",
             "couponId": 5097,
             "expireTime": 2000000000,
-            "title": "",
+            "title": "Free Personalized Santa Hat (hi-quality embroidery, just pay $5.95 S/H - one per customer/address)",
             "description": "",
             "type": "online",
             "link": "http://www.dealsplus.com/rb2.php?cid=5097",
             "couponCode": "DEQDKTCLLS6Y",
-            "subType": "code"
+            "subType": "code",
+            "shareCopy": "Hey check out this sale! Free Personalized Santa Hat (hi-quality embroidery, just pay $5.95 S/H - one per customer/address)  at Threadsmith. http://www.dealsplus.com/threadsmith-coupons?code=5097"
         }
     ]
 }
@@ -293,6 +295,12 @@ http://api.dealsplus.com/{Request API URL}?key={YourAPIKey}</td>
                 <td align="left">Yes</td>
                 <td align="left">The URL of the Store Logo</td>
             </tr>
+            <tr>
+                <td align="left">storeUrl</td>
+                <td align="left">String</td>
+                <td align="left">Yes</td>
+                <td align="left">The URL of the Store Page on Dealsplus</td>
+            </tr>
             </tbody>
         </table>
 
@@ -306,17 +314,18 @@ http://api.dealsplus.com/{Request API URL}?key={YourAPIKey}</td>
     "results": true,
     "count": 3,
     "stores": [
-    {
-    "storeId": 9,
-    "storeName": "Best Buy",
-    "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif"
-    },
-    {
-    ...
-    },
-    {
-    ...
-    }
+        {
+            "storeId": 9,
+            "storeName": "Best Buy",
+            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif",
+            "storeUrl": "http://www.dealsplus.com/bestbuy-coupons"
+        },
+        {
+            ...
+        },
+        {
+            ...
+        }
     ]
 }
 </code></pre>
@@ -474,6 +483,12 @@ http://api.dealsplus.com/{Request API URL}?key={YourAPIKey}</td>
                 <td align="left">No</td>
                 <td align="left">Url of printable Coupon Image. It only gets returned if coupon type is "inStore" and subType is "printable".</td>
             </tr>
+            <tr>
+                <td align="left">shareCopy</td>
+                <td align="left">String</td>
+                <td align="left">Yes</td>
+                <td align="left">Text to display/send when sharing a Coupon.</td>
+            </tr>
             </tbody>
         </table>
 
@@ -487,23 +502,24 @@ http://api.dealsplus.com/{Request API URL}?key={YourAPIKey}</td>
     "results": true,
     "count": 2,
     "coupons": [
-    {
-    "storeId": 78,
-    "storeName": "abcink",
-    "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/abcink.gif",
-    "coverImage": "http://img.dealspl.us",
-    "couponId": 861,
-    "expireTime": 2000000000,
-    "title": "",
-    "description": "",
-    "type": "online",
-    "link": "http://www.dealsplus.com/rb2.php?cid=861",
-    "couponCode": "ABC-ALL5PER",
-    "subType": "code"
-    },
-    {
-    ...
-    }
+        {
+            "storeId": 78,
+            "storeName": "abcink",
+            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/abcink.gif",
+            "coverImage": "http://img.dealspl.us",
+            "couponId": 861,
+            "expireTime": 2000000000,
+            "title": "5% off entire orders",
+            "description": "",
+            "type": "online",
+            "link": "http://www.dealsplus.com/rb2.php?cid=861",
+            "couponCode": "ABC-ALL5PER",
+            "subType": "code",
+            "shareCopy": "Hey check out this sale! 5% off entire orders  at abcink. http://www.dealsplus.com/abcink-coupons?code=861"
+        },
+        {
+            ...
+        }
     ]
 }
 </code></pre>
@@ -583,6 +599,12 @@ http://api.dealsplus.com/{Request API URL}?key={YourAPIKey}</td>
                 <td align="left">Yes</td>
                 <td align="left">The URL of the Store Logo</td>
             </tr>
+            <tr>
+                <td align="left">storeUrl</td>
+                <td align="left">String</td>
+                <td align="left">Yes</td>
+                <td align="left">The URL of the Store Page on Dealsplus</td>
+            </tr>
             </tbody>
         </table>
 
@@ -595,14 +617,15 @@ http://api.dealsplus.com/{Request API URL}?key={YourAPIKey}</td>
     "error": false,
     "results": null,
     "stores": [
-    {
-    "storeId": 9,
-    "storeName": "Best Buy",
-    "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif"
-    },
-    {
-    ...
-    }
+        {
+            "storeId": 9,
+            "storeName": "Best Buy",
+            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif",
+            "storeUrl": "http://www.dealsplus.com/bestbuy-coupons"
+        },
+        {
+            ...
+        }
     ]
 }
 </code></pre>
