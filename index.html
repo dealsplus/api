@@ -60,6 +60,23 @@
 <li><a href="#update-coupon-save-count">Update Coupon Save Count</a></li>
 </ul>
 </li>
+    <li>
+        <a href="#api-request-url">API Request URL</a>
+
+        <ul class="task-list">
+            <li><a href="#store-selection">Store Selection Page</a></li>
+            <li><a href="#home">Home Page</a></li>
+            <li><a href="#popular">Popular Page</a></li>
+            <li><a href="#my-store">My Store Page</a></li>
+            <li><a href="#search-store">Search Store Page</a></li>
+            <li><a href="#store">Store page</a></li>
+            <li><a href="#update-coupon-save-count">Saved Coupon Page</a></li>
+            <li><a href="#terms-of-use">Terms of Use Page</a></li>
+            <li>
+                <a href="#privacy-policy">Privacy Policy Page</a><br>
+            </li>
+        </ul>
+    </li>
 </ul>
 
 <h2>
@@ -684,6 +701,155 @@ http://api.dealsplus.com/{Request API URL}?key={YourAPIKey}</td>
     "error": false,
     "msg": "Coupon Save Coupon Updated!"
 }
+</code></pre>
+
+        <h3>
+            <a id="user-content-term-of-use-inquiry" class="anchor" href="#term-of-use-inquiry" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="term-of-use-inquiry">Term of Use Inquiry</a>
+        </h3>
+
+        <p>This API Request will return Terms of Use as a string with html encoded characters.</p>
+
+        <h4>
+            <a id="user-content-resource-uri-4" class="anchor" href="#resource-uri-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource URI</h4>
+
+<pre><code>/v4/couponapp/term
+</code></pre>
+
+        <h4>
+            <a id="user-content-response-properties-4" class="anchor" href="#response-properties-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response Properties</h4>
+
+        <p>Response returns true/false on success or error.</p>
+
+        <h5>
+            <a id="user-content-example-response-5" class="anchor" href="#example-response-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Response</h5>
+
+<pre><code>{
+    msg: "",
+    errorCode: 0,
+    error: false,
+    results: "&amp;lt;p&amp;gt;To better serve you and to clarify our service, we have drawn up an agreement of our terms and conditions. In order to use our service, you must read and accept all of the terms and conditions of this agreement and in the Privacy Policy. If you do not agree to be bound by the terms after you read this Agreement, you may not use our service.&amp;lt;/p&amp;gt;&amp;lt;br&amp;gt; &amp;lt;h3&amp;gt;1. The Service and Terms&amp;lt;/h3&amp;gt; &amp;lt;p&amp;gt; Fusion Web, LLC (referred to hereafter
+}
+</code></pre>
+
+        <h3>
+            <a id="user-content-privacy-policy-inquiry" class="anchor" href="#privacy-policy-inquiry" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="privacy-policy-inquiry">Privacy Policy Inquiry</a>
+        </h3>
+
+        <p>This API Request will return Privacy Policy as a string with html encoded characters.</p>
+
+        <h4>
+            <a id="user-content-resource-uri-5" class="anchor" href="#resource-uri-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource URI</h4>
+
+<pre><code>/v4/couponapp/privacy
+</code></pre>
+
+        <h4>
+            <a id="user-content-response-properties-5" class="anchor" href="#response-properties-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response Properties</h4>
+
+        <p>Response returns true/false on success or error.</p>
+
+        <h5>
+            <a id="user-content-example-response-6" class="anchor" href="#example-response-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Response</h5>
+
+<pre><code>{
+    msg: "",
+    errorCode: 0,
+    error: false,
+    results: "&amp;lt;p&amp;gt;Here at dealsplus we recognize that your privacy is very important, and to keep you informed about our privacy practices we ask that you please read the guidelines described below. Keep in mind that because dealsplus is a growing website and internet technologies are constantly evolving, these guidelines are subject to change and any said changes will be posted on this page. Any material changes from current practices will be posted on the main page of this website to see ..."
+}
+</code></pre>
+
+        <h2>
+            <a id="user-content-api-request-url" class="anchor" href="#api-request-url" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="api-request-url">API Request URL</a>
+        </h2>
+
+        <p>This section lists all the API Request URLs with parameters for all pages on the app. All pages that requires an api call on the app are listed here.</p>
+
+        <h3>
+            <a id="user-content-store-selection-page" class="anchor" href="#store-selection-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="store-selection">Store Selection Page</a>
+        </h3>
+
+<pre><code>/v4/couponapp/store
+</code></pre>
+
+        <h3>
+            <a id="user-content-home-page" class="anchor" href="#home-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="home">Home Page</a>
+        </h3>
+
+<pre><code>/v4/couponapp/coupon?storeId={savedStoreId1|savedStoreId2|...}
+</code></pre>
+
+        <h3>
+            <a id="user-content-popular-page" class="anchor" href="#popular-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="popular">Popular Page</a>
+        </h3>
+
+<pre><code>/v4/couponapp/coupon
+</code></pre>
+
+        <h3>
+            <a id="user-content-my-store-page" class="anchor" href="#my-store-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="my-store">My Store Page</a>
+        </h3>
+
+<pre><code>/v4/couponapp/store?storeId={savedStoreId1|savedStoreId2|...}
+</code></pre>
+
+        <h3>
+            <a id="user-content-search-store-page" class="anchor" href="#search-store-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="search-store">Search Store Page</a>
+        </h3>
+
+<pre><code>/v4/couponapp/search?keyword={yourSearchKeyWord}
+</code></pre>
+
+        <h3>
+            <a id="user-content-store-page" class="anchor" href="#store-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="store">Store page</a>
+        </h3>
+
+        <h5>
+            <a id="user-content-all-tab" class="anchor" href="#all-tab" aria-hidden="true"><span class="octicon octicon-link"></span></a>ALL Tab</h5>
+
+<pre><code>/v4/couponapp/coupon?storeId={storeId}
+</code></pre>
+
+        <h5>
+            <a id="user-content-online-tab" class="anchor" href="#online-tab" aria-hidden="true"><span class="octicon octicon-link"></span></a>ONLINE Tab</h5>
+
+<pre><code>/v4/couponapp/coupon?storeId={storeId}&amp;type=online
+</code></pre>
+
+        <h5>
+            <a id="user-content-in-store-tab" class="anchor" href="#in-store-tab" aria-hidden="true"><span class="octicon octicon-link"></span></a>IN-STORE Tab</h5>
+
+<pre><code>/v4/couponapp/coupon?storeId={storeId}&amp;type=instore
+</code></pre>
+
+        <h3>
+            <a id="user-content-saved-coupon-page" class="anchor" href="#saved-coupon-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="saved-coupon">Saved Coupon Page</a>
+        </h3>
+
+        <h5>
+            <a id="user-content-all-tab-1" class="anchor" href="#all-tab-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>ALL Tab</h5>
+
+<pre><code>/v4/couponapp/coupon?couponId={savedCouponId1|savedCouponId2|...}
+</code></pre>
+
+        <h5>
+            <a id="user-content-expiring-tab" class="anchor" href="#expiring-tab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Expiring Tab</h5>
+
+<pre><code>/v4/couponapp/coupon?couponId={savedCouponId1|savedCouponId2|...}&amp;expireSoon=1
+</code></pre>
+
+        <h3>
+            <a id="user-content-terms-of-use-page" class="anchor" href="#terms-of-use-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="term-of-use">Terms of Use Page</a>
+        </h3>
+
+<pre><code>/v4/couponapp/term
+</code></pre>
+
+        <h3>
+            <a id="user-content-privacy-policy-page" class="anchor" href="#privacy-policy-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="privacy-policy">Privacy Policy Page</a>
+        </h3>
+
+<pre><code>/v4/couponapp/privacy
 </code></pre>
 </article>
   </div>
