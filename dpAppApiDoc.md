@@ -10,6 +10,7 @@ This page contains the basic concepts and data formats of the Dealsplus Coupon A
 	* [Coupon Object Inquiry](#coupon-object-inquiry)
 	* [Store Object Search](#store-object-search)
 	* [Update Coupon Save Count](#update-coupon-save-count)
+	* [Update Store Save Count](#update-store-save-count)
 	* [Terms of Use Inquiry](#terms-of-use-inquiry)
 	* [Privacy Policy Inquiry](#privacy-policy-inquiry)      
 * [API Request URL](#api-request-url)
@@ -72,34 +73,23 @@ The response from our REST APIs requests is in REST JSON response format.
     "count": 2,
     "coupons": [
         {
-            "storeId": 78,
-            "storeName": "abcink",
-            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/abcink.gif",
-            "coverImage": "http://img.dealspl.us",
-            "couponId": 861,
-            "expireTime": 2000000000,
-            "title": "5% off entire orders",
+            "storeId": 21,
+            "storeName": "Macy's",
+            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/macys.com_1410986359.jpg",
+            "coverImage": "http://img.dealspl.us/dealimage/coupon/med/97/971796_1429211548.jpg",
+            "couponId": 971796,
+            "expireTime": "05/17/2033",
+            "expireCopy": "limited time",
+            "title": "Printable Coupon: $10 Off Purchase of $75+",
             "description": "",
-            "type": "online",
-            "link": "http://www.dealsplus.com/rb2.php?cid=861",
-            "couponCode": "ABC-ALL5PER",
-            "subType": "code",
-            "shareCopy": "Hey check out this sale! 5% off entire orders  at abcink. http://www.dealsplus.com/abcink-coupons?code=861"
+            "type": "inStore",
+            "subType": "printable",
+            "printableImage": "http://www.dealsplus.com/images/coupon/41/macys-coupons_41920.jpg",
+            "imageType": "jpg",
+            "shareCopy": "Hey check out this sale! Printable Coupon: $10 Off Purchase of $75+ at Macy's. http://www.dealsplus.com/macys-coupons?code=971796"
         },
         {
-            "storeId": 567,
-            "storeName": "Threadsmith",
-            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/threadsmith.gif",
-            "coverImage": "http://img.dealspl.us",
-            "couponId": 5097,
-            "expireTime": 2000000000,
-            "title": "Free Personalized Santa Hat (hi-quality embroidery, just pay $5.95 S/H - one per customer/address)",
-            "description": "",
-            "type": "online",
-            "link": "http://www.dealsplus.com/rb2.php?cid=5097",
-            "couponCode": "DEQDKTCLLS6Y",
-            "subType": "code",
-            "shareCopy": "Hey check out this sale! Free Personalized Santa Hat (hi-quality embroidery, just pay $5.95 S/H - one per customer/address)  at Threadsmith. http://www.dealsplus.com/threadsmith-coupons?code=5097"
+			  ...
         }
     ]
 }
@@ -121,8 +111,9 @@ Below are all the available properties of the Store Object Inquiry entity.
 |:-----|:-----|:-------|:-----------|
 |storeId|Integer|Yes|The Unique Store ID(s). For Multiple IDs, Seperate with '\|'. |
 |excludeStores|Integer|No|Only set this field to 1 if you want to exclude the storeId(s) you passed. Otherwise, do Not pass it in your request.|
-|page|Integer|No|Page Number| 
-|pageSize|Integer|No|How many Store Objects per Page. Default: 100| 
+|recentHistory|Integer|No|Only set this field to 1 if you want to fetch recently visited stores with the storeId(s) you passed, it will return Store Objects in the order you passed. Otherwise, do Not pass it in your request.|
+|page|Integer|No|Page Number. Default: 1| 
+|pageSize|Integer|No|How many Store Objects per Page. Default: 45| 
 
 #####Example Request
 Get the first page of size 20 of all store objects except for storeId 347, 127 and 564.
@@ -183,6 +174,8 @@ Below are all the available properties of the Store Object Inquiry entity.
 |storeId|Integer|No|The Unique Store ID(s). For Multiple Storess, Seperate the IDs with '\|'|
 |type|String|No|Coupon Type: "online" or "inStore"| 
 |expireSoon|Integer|No|Pass this parameter with '1' to get Coupons that will expire soon.| 
+|page|Integer|No|Page Number. Default: 1| 
+|pageSize|Integer|No|How many Coupon Objects per Page. Default: 10| 
 
 
 #####Example Request
@@ -208,7 +201,8 @@ Below are all the available properties of the Coupon Object Inquiry response.
 |title|String|Yes|Coupon Title| 
 |description|String|Yes|Coupon Description| 
 |link|String|Yes|The redirect URL of this Coupon.| 
-|expireTime|Integer|Yes|The expire time of this Coupon in unix timestamp format.| 
+|expireTime|String|Yes|The expire time of this Coupon in mm/dd/YYYY format.| 
+|expireCopy|String|Yes|The text copy of this Coupon to display at the Expiration section.| 
 |coverImage|String|Yes|The Cover Image URL of this Coupon.| 
 |printableImage|String|No|Url of printable Coupon Image. It only gets returned if coupon type is "inStore" and subType is "printable".| 
 |shareCopy|String|Yes|Text to send when sharing a Coupon|
@@ -224,20 +218,21 @@ Below are all the available properties of the Coupon Object Inquiry response.
     "count": 2,
     "coupons": [
         {
-            "storeId": 78,
-            "storeName": "abcink",
-            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/abcink.gif",
-            "coverImage": "http://img.dealspl.us",
-            "couponId": 861,
-            "expireTime": 2000000000,
-            "title": "5% off entire orders",
+            "storeId": 21,
+            "storeName": "Macy's",
+            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/macys.com_1410986359.jpg",
+            "coverImage": "http://img.dealspl.us/dealimage/coupon/med/97/971796_1429211548.jpg",
+            "couponId": 971796,
+            "expireTime": "05/17/2033",
+            "expireCopy": "limited time",
+            "title": "Printable Coupon: $10 Off Purchase of $75+",
             "description": "",
-            "type": "online",
-            "link": "http://www.dealsplus.com/rb2.php?cid=861",
-            "couponCode": "ABC-ALL5PER",
-            "subType": "code",
-            "shareCopy": "Hey check out this sale! 5% off entire orders  at abcink. http://www.dealsplus.com/abcink-coupons?code=861"
-        },
+            "type": "inStore",
+            "subType": "printable",
+            "printableImage": "http://www.dealsplus.com/images/coupon/41/macys-coupons_41920.jpg",
+            "imageType": "jpg",
+            "shareCopy": "Hey check out this sale! Printable Coupon: $10 Off Purchase of $75+ at Macy's. http://www.dealsplus.com/macys-coupons?code=971796"
+        }
         {
 			...
         }
@@ -308,11 +303,12 @@ Below are all the available properties of the Coupon Object Inquiry response.
 ```
 
 ####Resource Properties
-Below are all the available properties of the Coupon Object Inquiry entity.   
+Below are all the available properties of the Coupon Save Count Update entity.   
 
 |Property|Value|	Mandatory|	Description|
 |:-----|:-----|:-------|:-----------|
 |couponId|Integer|Yes|The Unique Coupon ID that the user saved.|
+|delete|Integer|No|Pass 1 to this paramter if user deletes the coupon|
  
 #####Example Request
 Update Save Count for Coupon with ID 861.
@@ -329,11 +325,47 @@ Response returns true/false on success or error with message.
 ```
 {
     "error": false,
-    "msg": "Coupon Save Coupon Updated!"
+    "msg": "Coupon Save Count Updated!"
 }
 ```    
 
-### <a name="term-of-use-inquiry">Term of Use Inquiry</a>
+### <a name="update-store-save-count">Update Store Save Count</a>
+
+####Resource URI
+
+```
+/v4/couponapp/saveStore
+```
+
+####Resource Properties
+Below are all the available properties of the Coupon Save Count Update entity.   
+
+|Property|Value|	Mandatory|	Description|
+|:-----|:-----|:-------|:-----------|
+|storeId|Integer|Yes|The Unique Store ID(s) that the user saved. For Multiple IDs, add '\|' in between IDs.|
+|delete|Integer|No|Pass 1 to this paramter if user deletes the coupon|
+ 
+#####Example Request
+Update Save Count for Store #78 & Store #21.
+
+```
+/v4/couponapp/saveCoupon?key={YourAPIKey}&storeId=78|21
+```
+
+####Response Properties
+Response returns true/false on success or error with message.
+
+#####Example Response
+
+```
+{
+    "error": false,
+    "msg": "Store Save Count Updated!"
+}
+```    
+
+
+### <a name="terms-of-use-inquiry">Term of Use Inquiry</a>
 This API Request will return Terms of Use as a string with html encoded characters.
 ####Resource URI
 
@@ -397,13 +429,22 @@ This section lists all the API Request URLs with parameters for all pages on the
 ```
 
 ### <a name="my-store">My Store Page</a>
+#####My Store Section
 ```
 /v4/couponapp/store?storeId={savedStoreId1|savedStoreId2|...}
 ```
-
+#####Suggested Store Section
+```
+/v4/couponapp/store?storeId={savedStoreId1|savedStoreId2|...}&excludeStores=1
+```
 ### <a name="search-store">Search Store Page</a>
+#####Search Result & Search Auto-Complete
 ```
 /v4/couponapp/search?keyword={yourSearchKeyWord}
+```
+#####Recently Visited Stores
+```
+/v4/couponapp/store?storeId={savedStoreId1|savedStoreId2|...}&recentHistory=1
 ```
 
 ### <a name="store">Store page</a>
