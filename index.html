@@ -35,822 +35,798 @@
     <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
 <a id="user-content-getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h1>
 
-<p>This page contains the basic concepts and data formats of the Dealsplus Coupon API.    </p>
+        <p>This page contains the basic concepts and data formats of the Dealsplus Coupon API.    </p>
 
-<ul class="task-list">
-<li>
-<a href="#structure-of-the-rest-url">Structure of the REST URL</a><br>
-</li>
-<li>
-<a href="#authentication">Authentication</a><br>
-</li>
-<li>
-<a href="#request-format">Request Formats</a><br>
-</li>
-<li>
-<a href="#response-format">Response Formats</a><br>
-</li>
-<li>
-<a href="#api-request-resource">API Request Resource</a><br>
+        <ul>
+            <li><a href="#structure-of-the-rest-url">Structure of the REST URL</a><br></li>
+            <li><a href="#authentication">Authentication</a><br></li>
+            <li><a href="#request-format">Request Formats</a><br></li>
+            <li><a href="#response-format">Response Formats</a><br></li>
+            <li><a href="#api-request-resource">API Request Resource</a><br>
 
-<ul class="task-list">
-<li><a href="#store-object-inquiry">Store Object Inquiry</a></li>
-<li><a href="#coupon-object-inquiry">Coupon Object Inquiry</a></li>
-<li><a href="#store-object-search">Store Object Search</a></li>
-<li><a href="#update-coupon-save-count">Update Coupon Save Count</a></li>
-</ul>
-</li>
-    <li>
-        <a href="#api-request-url">API Request URL</a>
+                <ul>
+                    <li><a href="#store-object-inquiry">Store Object Inquiry</a></li>
+                    <li><a href="#coupon-object-inquiry">Coupon Object Inquiry</a></li>
+                    <li><a href="#store-object-search">Store Object Search</a></li>
+                    <li><a href="#update-coupon-save-count">Update Coupon Save Count</a></li>
+                    <li><a href="#update-store-save-count">Update Store Save Count</a></li>
+                    <li><a href="#terms-of-use-inquiry">Terms of Use Inquiry</a></li>
+                    <li><a href="#privacy-policy-inquiry">Privacy Policy Inquiry</a><br></li>
+                </ul></li>
+            <li><a href="#api-request-url">API Request URL</a>
 
-        <ul class="task-list">
-            <li><a href="#store-selection">Store Selection Page</a></li>
-            <li><a href="#home">Home Page</a></li>
-            <li><a href="#popular">Popular Page</a></li>
-            <li><a href="#my-store">My Store Page</a></li>
-            <li><a href="#search-store">Search Store Page</a></li>
-            <li><a href="#store">Store page</a></li>
-            <li><a href="#update-coupon-save-count">Saved Coupon Page</a></li>
-            <li><a href="#terms-of-use">Terms of Use Page</a></li>
-            <li>
-                <a href="#privacy-policy">Privacy Policy Page</a><br>
-            </li>
+                <ul>
+                    <li><a href="#store-selection">Store Selection Page</a></li>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#popular">Popular Page</a></li>
+                    <li><a href="#my-store">My Store Page</a></li>
+                    <li><a href="#search-store">Search Store Page</a></li>
+                    <li><a href="#store">Store page</a></li>
+                    <li><a href="#update-coupon-save-count">Saved Coupon Page</a></li>
+                    <li><a href="#terms-of-use">Terms of Use Page</a></li>
+                    <li><a href="#privacy-policy">Privacy Policy Page</a><br></li>
+                </ul></li>
         </ul>
-    </li>
-</ul>
 
-<h2>
-<a id="user-content-structure-of-the-rest-url" class="anchor" href="#structure-of-the-rest-url" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="structure-of-the-rest-url">Structure of the REST URL</a>
-</h2>
+        <h2 id="toc_1"><a name="structure-of-the-rest-url">Structure of the REST URL</a></h2>
 
-<p>URLs for Dealsplus REST API have the following structure:</p>
+        <p>URLs for Dealsplus REST API have the following structure:</p>
 
-<table>
-<thead>
-<tr>
-<th align="left">URL Structure</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">
-http://api.dealsplus.com/{Request API URL}</td>
-</tr>
-</tbody>
-</table>
+        <table>
+            <thead>
+            <tr>
+                <th style="text-align: left">URL Structure</th>
+            </tr>
+            </thead>
 
-<h4>
-<a id="user-content-example-of-url-for-store-object-inquiry" class="anchor" href="#example-of-url-for-store-object-inquiry" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of URL for Store Object Inquiry</h4>
+            <tbody>
+            <tr>
+                <td style="text-align: left">http://api.dealsplus.com/{Request API URL}</td>
+            </tr>
+            </tbody>
+        </table>
 
-<table>
-<thead>
-<tr>
-<th align="left">Example URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">http://api.dealsplus.com/v4/couponapp/store</td>
-</tr>
-</tbody>
-</table>
+        <h4 id="toc_2">Example of URL for Store Object Inquiry</h4>
 
-<h2>
-<a id="user-content-authentication" class="anchor" href="#authentication" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="authentication">Authentication</a>
-</h2>
+        <table>
+            <thead>
+            <tr>
+                <th style="text-align: left">Example URL</th>
+            </tr>
+            </thead>
 
-<p>All requests made to the Dealsplus Coupon App API requires an encoded API Key that is assigned to the app for Authentication.<br>
-To pass the API Key, you need to simply pass it in the URL as the 'key' parameter.</p>
+            <tbody>
+            <tr>
+                <td style="text-align: left">http://api.dealsplus.com/v4/couponapp/store</td>
+            </tr>
+            </tbody>
+        </table>
 
-<table>
-<thead>
-<tr>
-<th align="left">URL Structure with Authentication Credentials</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">
-http://api.dealsplus.com/{Request API URL}?key={YourAPIKey}</td>
-</tr>
-</tbody>
-</table>
+        <h2 id="toc_3"><a name="authentication">Authentication</a></h2>
 
-<h4>
-<a id="user-content-example-of-url-for-coupon-object-inquiry-with-api-key" class="anchor" href="#example-of-url-for-coupon-object-inquiry-with-api-key" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of URL for Coupon Object Inquiry with API Key</h4>
+        <p>All requests made to the Dealsplus Coupon App API requires an encoded API Key that is assigned to the app for Authentication.<br>
+            To pass the API Key, you need to simply pass it in the URL as the &#39;key&#39; parameter.</p>
 
-<table>
-<thead>
-<tr>
-<th align="left">Example URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">http://api.dealsplus.com/v4/couponapp/coupon?key=abcdefghijklmnopqrstuvwxyz</td>
-</tr>
-</tbody>
-</table>
+        <table>
+            <thead>
+            <tr>
+                <th style="text-align: left">URL Structure with Authentication Credentials</th>
+            </tr>
+            </thead>
 
-<h2>
-<a id="user-content-request-formats" class="anchor" href="#request-formats" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="request-format">Request Formats</a>
-</h2>
+            <tbody>
+            <tr>
+                <td style="text-align: left">http://api.dealsplus.com/{Request API URL}?key={YourAPIKey}</td>
+            </tr>
+            </tbody>
+        </table>
 
-<p>The REST Request Format for all APIs is a simple HTTP GET action. By default, REST requests send a REST JSON response.     </p>
+        <h4 id="toc_4">Example of URL for Coupon Object Inquiry with API Key</h4>
 
-<h4>
-<a id="user-content-example-request" class="anchor" href="#example-request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Request</h4>
+        <table>
+            <thead>
+            <tr>
+                <th style="text-align: left">Example URL</th>
+            </tr>
+            </thead>
 
-<pre><code>GET /v4/couponapp/store?key={YourAPIKey}&amp;pageSize=20&amp;page=1
-</code></pre>
+            <tbody>
+            <tr>
+                <td style="text-align: left">http://api.dealsplus.com/v4/couponapp/coupon?key=abcdefghijklmnopqrstuvwxyz</td>
+            </tr>
+            </tbody>
+        </table>
 
-<h2>
-<a id="user-content-response-formats" class="anchor" href="#response-formats" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="response-format">Response Formats</a>
-</h2>
+        <h2 id="toc_5"><a name="request-format">Request Formats</a></h2>
 
-<p>The response from our REST APIs requests is in REST JSON response format.      </p>
+        <p>The REST Request Format for all APIs is a simple HTTP GET action. By default, REST requests send a REST JSON response.     </p>
 
-<h4>
-<a id="user-content-example-response" class="anchor" href="#example-response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Response</h4>
+        <h4 id="toc_6">Example Request</h4>
+
+        <pre><code>GET /v4/couponapp/store?key={YourAPIKey}&amp;pageSize=20&amp;page=1</code></pre>
+
+        <h2 id="toc_7"><a name="response-format">Response Formats</a></h2>
+
+        <p>The response from our REST APIs requests is in REST JSON response format.      </p>
+
+        <h4 id="toc_8">Example Response</h4>
 
 <pre><code>{
-    "msg": "",
-    "errorCode": 0,
-    "error": false,
-    "results": true,
-    "count": 2,
-    "coupons": [
-        {
-            "storeId": 78,
-            "storeName": "abcink",
-            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/abcink.gif",
-            "coverImage": "http://img.dealspl.us",
-            "couponId": 861,
-            "expireTime": 2000000000,
-            "title": "5% off entire orders",
-            "description": "",
-            "type": "online",
-            "link": "http://www.dealsplus.com/rb2.php?cid=861",
-            "couponCode": "ABC-ALL5PER",
-            "subType": "code",
-            "shareCopy": "Hey check out this sale! 5% off entire orders  at abcink. http://www.dealsplus.com/abcink-coupons?code=861"
-        },
-        {
-            "storeId": 567,
-            "storeName": "Threadsmith",
-            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/threadsmith.gif",
-            "coverImage": "http://img.dealspl.us",
-            "couponId": 5097,
-            "expireTime": 2000000000,
-            "title": "Free Personalized Santa Hat (hi-quality embroidery, just pay $5.95 S/H - one per customer/address)",
-            "description": "",
-            "type": "online",
-            "link": "http://www.dealsplus.com/rb2.php?cid=5097",
-            "couponCode": "DEQDKTCLLS6Y",
-            "subType": "code",
-            "shareCopy": "Hey check out this sale! Free Personalized Santa Hat (hi-quality embroidery, just pay $5.95 S/H - one per customer/address)  at Threadsmith. http://www.dealsplus.com/threadsmith-coupons?code=5097"
-        }
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;errorCode&quot;: 0,
+    &quot;error&quot;: false,
+    &quot;results&quot;: true,
+    &quot;count&quot;: 2,
+    &quot;coupons&quot;: [
+    {
+    &quot;storeId&quot;: 21,
+    &quot;storeName&quot;: &quot;Macy&#39;s&quot;,
+    &quot;storeLogo&quot;: &quot;http://img.dealspl.us/dealimage/stores/orig/0/macys.com_1410986359.jpg&quot;,
+    &quot;coverImage&quot;: &quot;http://img.dealspl.us/dealimage/coupon/med/97/971796_1429211548.jpg&quot;,
+    &quot;couponId&quot;: 971796,
+    &quot;expireTime&quot;: &quot;05/17/2033&quot;,
+    &quot;expireCopy&quot;: &quot;limited time&quot;,
+    &quot;title&quot;: &quot;Printable Coupon: $10 Off Purchase of $75+&quot;,
+    &quot;description&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;inStore&quot;,
+    &quot;subType&quot;: &quot;printable&quot;,
+    &quot;printableImage&quot;: &quot;http://www.dealsplus.com/images/coupon/41/macys-coupons_41920.jpg&quot;,
+    &quot;imageType&quot;: &quot;jpg&quot;,
+    &quot;shareCopy&quot;: &quot;Hey check out this sale! Printable Coupon: $10 Off Purchase of $75+ at Macy&#39;s. http://www.dealsplus.com/macys-coupons?code=971796&quot;
+    },
+    {
+    ...
+    }
     ]
-}
-</code></pre>
+}</code></pre>
 
-<h2>
-<a id="user-content-api-request-resource" class="anchor" href="#api-request-resource" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="api-request-resource">API Request Resource</a>
-</h2>
+        <h2 id="toc_9"><a name="api-request-resource">API Request Resource</a></h2>
 
+        <h3 id="toc_10"><a name="store-object-inquiry">Store Object Inquiry</a></h3>
 
-        <h3>
-            <a id="user-content-store-object-inquiry" class="anchor" href="#store-object-inquiry" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="store-object-inquiry">Store Object Inquiry</a>
-        </h3>
+        <h4 id="toc_11">Resource URI</h4>
 
-        <h4>
-            <a id="user-content-resource-uri" class="anchor" href="#resource-uri" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource URI</h4>
+        <pre><code>/v4/couponapp/store</code></pre>
 
-<pre><code>/v4/couponapp/store
-</code></pre>
-
-        <h4>
-            <a id="user-content-resource-properties" class="anchor" href="#resource-properties" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource Properties</h4>
+        <h4 id="toc_12">Resource Properties</h4>
 
         <p>Below are all the available properties of the Store Object Inquiry entity.    </p>
 
         <table>
             <thead>
             <tr>
-                <th align="left">Property</th>
-                <th align="left">Value</th>
-                <th align="left">Mandatory</th>
-                <th align="left">Description</th>
+                <th style="text-align: left">Property</th>
+                <th style="text-align: left">Value</th>
+                <th style="text-align: left">Mandatory</th>
+                <th style="text-align: left">Description</th>
             </tr>
             </thead>
+
             <tbody>
             <tr>
-                <td align="left">storeId</td>
-                <td align="left">Integer</td>
-                <td align="left">Yes</td>
-                <td align="left">The Unique Store ID(s). For Multiple IDs, Seperate with '|'.</td>
+                <td style="text-align: left">storeId</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Unique Store ID(s). For Multiple IDs, Seperate with &#39;|&#39;.</td>
             </tr>
             <tr>
-                <td align="left">excludeStores</td>
-                <td align="left">Integer</td>
-                <td align="left">No</td>
-                <td align="left">Only set this field to 1 if you want to exclude the storeId(s) you passed. Otherwise, do Not pass it in your request.</td>
+                <td style="text-align: left">excludeStores</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">Only set this field to 1 if you want to exclude the storeId(s) you passed. Otherwise, do Not pass it in your request.</td>
             </tr>
             <tr>
-                <td align="left">page</td>
-                <td align="left">Integer</td>
-                <td align="left">No</td>
-                <td align="left">Page Number</td>
+                <td style="text-align: left">recentHistory</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">Only set this field to 1 if you want to fetch recently visited stores with the storeId(s) you passed, it will return Store Objects in the order you passed. Otherwise, do Not pass it in your request.</td>
             </tr>
             <tr>
-                <td align="left">pageSize</td>
-                <td align="left">Integer</td>
-                <td align="left">No</td>
-                <td align="left">How many Store Objects per Page. Default: 100</td>
+                <td style="text-align: left">page</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">Page Number. Default: 1</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">pageSize</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">How many Store Objects per Page. Default: 45</td>
             </tr>
             </tbody>
         </table>
 
-        <h5>
-            <a id="user-content-example-request-1" class="anchor" href="#example-request-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Request</h5>
+        <h5 id="toc_13">Example Request</h5>
 
         <p>Get the first page of size 20 of all store objects except for storeId 347, 127 and 564.</p>
 
-<pre><code>/v4/couponapp/store?key={YourAPIKey}&amp;storeId=347|127|564&amp;excludeStore=1&amp;page=1&amp;pageSize=20
-</code></pre>
+        <pre><code>/v4/couponapp/store?key={YourAPIKey}&amp;storeId=347|127|564&amp;excludeStore=1&amp;page=1&amp;pageSize=20</code></pre>
 
-        <h4>
-            <a id="user-content-response-properties" class="anchor" href="#response-properties" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response Properties</h4>
+        <h4 id="toc_14">Response Properties</h4>
 
         <p>Below are all the available properties of the Store Object Inquiry response.    </p>
 
         <table>
             <thead>
             <tr>
-                <th align="left">Property</th>
-                <th align="left">Value</th>
-                <th align="left">Mandatory</th>
-                <th align="left">Description</th>
+                <th style="text-align: left">Property</th>
+                <th style="text-align: left">Value</th>
+                <th style="text-align: left">Mandatory</th>
+                <th style="text-align: left">Description</th>
             </tr>
             </thead>
+
             <tbody>
             <tr>
-                <td align="left">storeId</td>
-                <td align="left">Integer</td>
-                <td align="left">Yes</td>
-                <td align="left">The Unique Store ID</td>
+                <td style="text-align: left">storeId</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Unique Store ID</td>
             </tr>
             <tr>
-                <td align="left">storeName</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">The Store Name</td>
+                <td style="text-align: left">storeName</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Store Name</td>
             </tr>
             <tr>
-                <td align="left">storeLogo</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">The URL of the Store Logo</td>
+                <td style="text-align: left">storeLogo</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The URL of the Store Logo</td>
             </tr>
             <tr>
-                <td align="left">storeUrl</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">The URL of the Store Page on Dealsplus</td>
+                <td style="text-align: left">storeUrl</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The URL of the Store Page on Dealsplus</td>
             </tr>
             </tbody>
         </table>
 
-        <h5>
-            <a id="user-content-example-response-1" class="anchor" href="#example-response-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Response</h5>
+        <h5 id="toc_15">Example Response</h5>
 
 <pre><code>{
-    "msg": "",
-    "errorCode": 0,
-    "error": false,
-    "results": true,
-    "count": 3,
-    "stores": [
-        {
-            "storeId": 9,
-            "storeName": "Best Buy",
-            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif",
-            "storeUrl": "http://www.dealsplus.com/bestbuy-coupons"
-        },
-        {
-            ...
-        },
-        {
-            ...
-        }
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;errorCode&quot;: 0,
+    &quot;error&quot;: false,
+    &quot;results&quot;: true,
+    &quot;count&quot;: 3,
+    &quot;stores&quot;: [
+    {
+    &quot;storeId&quot;: 9,
+    &quot;storeName&quot;: &quot;Best Buy&quot;,
+    &quot;storeLogo&quot;: &quot;http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif&quot;,
+    &quot;storeUrl&quot;: &quot;http://www.dealsplus.com/bestbuy-coupons&quot;
+    },
+    {
+    ...
+    },
+    {
+    ...
+    }
     ]
-}
-</code></pre>
+}</code></pre>
 
-        <h3>
-            <a id="user-content-coupon-object-inquiry" class="anchor" href="#coupon-object-inquiry" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="coupon-object-inquiry">Coupon Object Inquiry</a>
-        </h3>
+        <h3 id="toc_16"><a name="coupon-object-inquiry">Coupon Object Inquiry</a></h3>
 
-        <h4>
-            <a id="user-content-resource-uri-1" class="anchor" href="#resource-uri-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource URI</h4>
+        <h4 id="toc_17">Resource URI</h4>
 
-<pre><code>/v4/couponapp/coupon
-</code></pre>
+        <pre><code>/v4/couponapp/coupon</code></pre>
 
-        <h4>
-            <a id="user-content-resource-properties-1" class="anchor" href="#resource-properties-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource Properties</h4>
+        <h4 id="toc_18">Resource Properties</h4>
 
         <p>Below are all the available properties of the Store Object Inquiry entity.    </p>
 
         <table>
             <thead>
             <tr>
-                <th align="left">Property</th>
-                <th align="left">Value</th>
-                <th align="left">Mandatory</th>
-                <th align="left">Description</th>
+                <th style="text-align: left">Property</th>
+                <th style="text-align: left">Value</th>
+                <th style="text-align: left">Mandatory</th>
+                <th style="text-align: left">Description</th>
             </tr>
             </thead>
+
             <tbody>
             <tr>
-                <td align="left">couponId</td>
-                <td align="left">Integer</td>
-                <td align="left">No</td>
-                <td align="left">The Unique Coupon ID(s). For Multiple Coupons, Seperate the IDs with '|'.</td>
+                <td style="text-align: left">couponId</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">The Unique Coupon ID(s). For Multiple Coupons, Seperate the IDs with &#39;|&#39;.</td>
             </tr>
             <tr>
-                <td align="left">storeId</td>
-                <td align="left">Integer</td>
-                <td align="left">No</td>
-                <td align="left">The Unique Store ID(s). For Multiple Storess, Seperate the IDs with '|'</td>
+                <td style="text-align: left">storeId</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">The Unique Store ID(s). For Multiple Storess, Seperate the IDs with &#39;|&#39;</td>
             </tr>
             <tr>
-                <td align="left">type</td>
-                <td align="left">String</td>
-                <td align="left">No</td>
-                <td align="left">Coupon Type: "online" or "inStore"</td>
+                <td style="text-align: left">type</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">Coupon Type: &quot;online&quot; or &quot;inStore&quot;</td>
             </tr>
             <tr>
-                <td align="left">expireSoon</td>
-                <td align="left">Integer</td>
-                <td align="left">No</td>
-                <td align="left">Pass this parameter with '1' to get Coupons that will expire soon.</td>
+                <td style="text-align: left">expireSoon</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">Pass this parameter with &#39;1&#39; to get Coupons that will expire soon.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">page</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">Page Number. Default: 1</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">pageSize</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">How many Coupon Objects per Page. Default: 10</td>
             </tr>
             </tbody>
         </table>
 
-        <h5>
-            <a id="user-content-example-request-2" class="anchor" href="#example-request-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Request</h5>
+        <h5 id="toc_19">Example Request</h5>
 
         <p>Get Coupon Objects for the saved Coupon IDs: 347, 127 and 564.</p>
 
-<pre><code>/v4/couponapp/coupon?key={YourAPIKey}&amp;couponId=347|127|564
-</code></pre>
+        <pre><code>/v4/couponapp/coupon?key={YourAPIKey}&amp;couponId=347|127|564</code></pre>
 
-        <h4>
-            <a id="user-content-response-properties-1" class="anchor" href="#response-properties-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response Properties</h4>
+        <h4 id="toc_20">Response Properties</h4>
 
         <p>Below are all the available properties of the Coupon Object Inquiry response.    </p>
 
         <table>
             <thead>
             <tr>
-                <th align="left">Property</th>
-                <th align="left">Value</th>
-                <th align="left">Mandatory</th>
-                <th align="left">Description</th>
+                <th style="text-align: left">Property</th>
+                <th style="text-align: left">Value</th>
+                <th style="text-align: left">Mandatory</th>
+                <th style="text-align: left">Description</th>
             </tr>
             </thead>
+
             <tbody>
             <tr>
-                <td align="left">couponId</td>
-                <td align="left">Integer</td>
-                <td align="left">Yes</td>
-                <td align="left">The Unique Coupon Id</td>
+                <td style="text-align: left">couponId</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Unique Coupon Id</td>
             </tr>
             <tr>
-                <td align="left">storeId</td>
-                <td align="left">Integer</td>
-                <td align="left">Yes</td>
-                <td align="left">The Store Id that the Coupon belongs to</td>
+                <td style="text-align: left">storeId</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Store Id that the Coupon belongs to</td>
             </tr>
             <tr>
-                <td align="left">storeName</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">The Store Name that the Coupon belongs to</td>
+                <td style="text-align: left">storeName</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Store Name that the Coupon belongs to</td>
             </tr>
             <tr>
-                <td align="left">storeLogo</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">The Store Logo Url that the Coupon belongs to</td>
+                <td style="text-align: left">storeLogo</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Store Logo Url that the Coupon belongs to</td>
             </tr>
             <tr>
-                <td align="left">type</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">Coupon Type: "online" or "inStore"</td>
+                <td style="text-align: left">type</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">Coupon Type: &quot;online&quot; or &quot;inStore&quot;</td>
             </tr>
             <tr>
-                <td align="left">subType</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">SubType of the Coupon. For online Coupons, it's "sale" or "code"; For in-store Coupons, it's "printable" or "sale".</td>
+                <td style="text-align: left">subType</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">SubType of the Coupon. For online Coupons, it&#39;s &quot;sale&quot; or &quot;code&quot;; For in-store Coupons, it&#39;s &quot;printable&quot; or &quot;sale&quot;.</td>
             </tr>
             <tr>
-                <td align="left">couponCode</td>
-                <td align="left">String</td>
-                <td align="left">No</td>
-                <td align="left">Coupon Code. It only gets returned if coupon type is "online" and subType is "code".</td>
+                <td style="text-align: left">couponCode</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">Coupon Code. It only gets returned if coupon type is &quot;online&quot; and subType is &quot;code&quot;.</td>
             </tr>
             <tr>
-                <td align="left">title</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">Coupon Title</td>
+                <td style="text-align: left">title</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">Coupon Title</td>
             </tr>
             <tr>
-                <td align="left">description</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">Coupon Description</td>
+                <td style="text-align: left">description</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">Coupon Description</td>
             </tr>
             <tr>
-                <td align="left">link</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">The redirect URL of this Coupon.</td>
+                <td style="text-align: left">link</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The redirect URL of this Coupon.</td>
             </tr>
             <tr>
-                <td align="left">expireTime</td>
-                <td align="left">Integer</td>
-                <td align="left">Yes</td>
-                <td align="left">The expire time of this Coupon in unix timestamp format.</td>
+                <td style="text-align: left">expireTime</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The expire time of this Coupon in mm/dd/YYYY format.</td>
             </tr>
             <tr>
-                <td align="left">coverImage</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">The Cover Image URL of this Coupon.</td>
+                <td style="text-align: left">expireCopy</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The text copy of this Coupon to display at the Expiration section.</td>
             </tr>
             <tr>
-                <td align="left">printableImage</td>
-                <td align="left">String</td>
-                <td align="left">No</td>
-                <td align="left">Url of printable Coupon Image. It only gets returned if coupon type is "inStore" and subType is "printable".</td>
+                <td style="text-align: left">coverImage</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Cover Image URL of this Coupon.</td>
             </tr>
             <tr>
-                <td align="left">shareCopy</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">Text to display/send when sharing a Coupon.</td>
+                <td style="text-align: left">printableImage</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">Url of printable Coupon Image. It only gets returned if coupon type is &quot;inStore&quot; and subType is &quot;printable&quot;.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">shareCopy</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">Text to send when sharing a Coupon</td>
             </tr>
             </tbody>
         </table>
 
-        <h5>
-            <a id="user-content-example-response-2" class="anchor" href="#example-response-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Response</h5>
+        <h5 id="toc_21">Example Response</h5>
 
 <pre><code>{
-    "msg": "",
-    "errorCode": 0,
-    "error": false,
-    "results": true,
-    "count": 2,
-    "coupons": [
-        {
-            "storeId": 78,
-            "storeName": "abcink",
-            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/abcink.gif",
-            "coverImage": "http://img.dealspl.us",
-            "couponId": 861,
-            "expireTime": 2000000000,
-            "title": "5% off entire orders",
-            "description": "",
-            "type": "online",
-            "link": "http://www.dealsplus.com/rb2.php?cid=861",
-            "couponCode": "ABC-ALL5PER",
-            "subType": "code",
-            "shareCopy": "Hey check out this sale! 5% off entire orders  at abcink. http://www.dealsplus.com/abcink-coupons?code=861"
-        },
-        {
-            ...
-        }
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;errorCode&quot;: 0,
+    &quot;error&quot;: false,
+    &quot;results&quot;: true,
+    &quot;count&quot;: 2,
+    &quot;coupons&quot;: [
+    {
+    &quot;storeId&quot;: 21,
+    &quot;storeName&quot;: &quot;Macy&#39;s&quot;,
+    &quot;storeLogo&quot;: &quot;http://img.dealspl.us/dealimage/stores/orig/0/macys.com_1410986359.jpg&quot;,
+    &quot;coverImage&quot;: &quot;http://img.dealspl.us/dealimage/coupon/med/97/971796_1429211548.jpg&quot;,
+    &quot;couponId&quot;: 971796,
+    &quot;expireTime&quot;: &quot;05/17/2033&quot;,
+    &quot;expireCopy&quot;: &quot;limited time&quot;,
+    &quot;title&quot;: &quot;Printable Coupon: $10 Off Purchase of $75+&quot;,
+    &quot;description&quot;: &quot;&quot;,
+    &quot;type&quot;: &quot;inStore&quot;,
+    &quot;subType&quot;: &quot;printable&quot;,
+    &quot;printableImage&quot;: &quot;http://www.dealsplus.com/images/coupon/41/macys-coupons_41920.jpg&quot;,
+    &quot;imageType&quot;: &quot;jpg&quot;,
+    &quot;shareCopy&quot;: &quot;Hey check out this sale! Printable Coupon: $10 Off Purchase of $75+ at Macy&#39;s. http://www.dealsplus.com/macys-coupons?code=971796&quot;
+    }
+    {
+    ...
+    }
     ]
-}
-</code></pre>
+}</code></pre>
 
-        <h3>
-            <a id="user-content-store-object-search" class="anchor" href="#store-object-search" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="store-object-search">Store Object Search</a>
-        </h3>
+        <h3 id="toc_22"><a name="store-object-search">Store Object Search</a></h3>
 
-        <h4>
-            <a id="user-content-resource-uri-2" class="anchor" href="#resource-uri-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource URI</h4>
+        <h4 id="toc_23">Resource URI</h4>
 
-<pre><code>/v4/couponapp/search
-</code></pre>
+        <pre><code>/v4/couponapp/search</code></pre>
 
-        <h4>
-            <a id="user-content-resource-properties-2" class="anchor" href="#resource-properties-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource Properties</h4>
+        <h4 id="toc_24">Resource Properties</h4>
 
         <p>Below are all the available properties of the Store Object Inquiry entity.    </p>
 
         <table>
             <thead>
             <tr>
-                <th align="left">Property</th>
-                <th align="left">Value</th>
-                <th align="left">Mandatory</th>
-                <th align="left">Description</th>
+                <th style="text-align: left">Property</th>
+                <th style="text-align: left">Value</th>
+                <th style="text-align: left">Mandatory</th>
+                <th style="text-align: left">Description</th>
             </tr>
             </thead>
+
             <tbody>
             <tr>
-                <td align="left">keyword</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">The store name keyword that user is trying to search for.</td>
+                <td style="text-align: left">keyword</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The store name keyword that user is trying to search for.</td>
             </tr>
             </tbody>
         </table>
 
-        <h5>
-            <a id="user-content-example-request-3" class="anchor" href="#example-request-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Request</h5>
+        <h5 id="toc_25">Example Request</h5>
 
-        <p>Get Store Objects match the keyword "best".</p>
+        <p>Get Store Objects match the keyword &quot;best&quot;.</p>
 
-<pre><code>/v4/couponapp/search?key={YourAPIKey}&amp;keyword=best
-</code></pre>
+        <pre><code>/v4/couponapp/search?key={YourAPIKey}&amp;keyword=best</code></pre>
 
-        <h4>
-            <a id="user-content-response-properties-2" class="anchor" href="#response-properties-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response Properties</h4>
+        <h4 id="toc_26">Response Properties</h4>
 
         <p>Below are all the available properties of the Coupon Object Inquiry response.   </p>
 
         <table>
             <thead>
             <tr>
-                <th align="left">Property</th>
-                <th align="left">Value</th>
-                <th align="left">Mandatory</th>
-                <th align="left">Description</th>
+                <th style="text-align: left">Property</th>
+                <th style="text-align: left">Value</th>
+                <th style="text-align: left">Mandatory</th>
+                <th style="text-align: left">Description</th>
             </tr>
             </thead>
+
             <tbody>
             <tr>
-                <td align="left">storeId</td>
-                <td align="left">Integer</td>
-                <td align="left">Yes</td>
-                <td align="left">The Unique Store ID</td>
+                <td style="text-align: left">storeId</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Unique Store ID</td>
             </tr>
             <tr>
-                <td align="left">storeName</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">The Store Name</td>
+                <td style="text-align: left">storeName</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Store Name</td>
             </tr>
             <tr>
-                <td align="left">storeLogo</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">The URL of the Store Logo</td>
+                <td style="text-align: left">storeLogo</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The URL of the Store Logo</td>
             </tr>
             <tr>
-                <td align="left">storeUrl</td>
-                <td align="left">String</td>
-                <td align="left">Yes</td>
-                <td align="left">The URL of the Store Page on Dealsplus</td>
+                <td style="text-align: left">storeUrl</td>
+                <td style="text-align: left">String</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The URL of the Store Page on Dealsplus</td>
             </tr>
             </tbody>
         </table>
 
-        <h5>
-            <a id="user-content-example-response-3" class="anchor" href="#example-response-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Response</h5>
+        <h5 id="toc_27">Example Response</h5>
 
 <pre><code>{
-    "msg": "",
-    "errorCode": 0,
-    "error": false,
-    "results": null,
-    "stores": [
-        {
-            "storeId": 9,
-            "storeName": "Best Buy",
-            "storeLogo": "http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif",
-            "storeUrl": "http://www.dealsplus.com/bestbuy-coupons"
-        },
-        {
-            ...
-        }
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;errorCode&quot;: 0,
+    &quot;error&quot;: false,
+    &quot;results&quot;: null,
+    &quot;stores&quot;: [
+    {
+    &quot;storeId&quot;: 9,
+    &quot;storeName&quot;: &quot;Best Buy&quot;,
+    &quot;storeLogo&quot;: &quot;http://img.dealspl.us/dealimage/stores/orig/0/bestbuy.com_1326387793.gif&quot;,
+    &quot;storeUrl&quot;: &quot;http://www.dealsplus.com/bestbuy-coupons&quot;
+    },
+    {
+    ...
+    }
     ]
-}
-</code></pre>
+}</code></pre>
 
-        <h3>
-            <a id="user-content-update-coupon-save-count" class="anchor" href="#update-coupon-save-count" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="update-coupon-save-count">Update Coupon Save Count</a>
-        </h3>
+        <h3 id="toc_28"><a name="update-coupon-save-count">Update Coupon Save Count</a></h3>
 
-        <h4>
-            <a id="user-content-resource-uri-3" class="anchor" href="#resource-uri-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource URI</h4>
+        <h4 id="toc_29">Resource URI</h4>
 
-<pre><code>/v4/couponapp/saveCoupon
-</code></pre>
+        <pre><code>/v4/couponapp/saveCoupon</code></pre>
 
-        <h4>
-            <a id="user-content-resource-properties-3" class="anchor" href="#resource-properties-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource Properties</h4>
+        <h4 id="toc_30">Resource Properties</h4>
 
-        <p>Below are all the available properties of the Coupon Object Inquiry entity.   </p>
+        <p>Below are all the available properties of the Coupon Save Count Update entity.   </p>
 
         <table>
             <thead>
             <tr>
-                <th align="left">Property</th>
-                <th align="left">Value</th>
-                <th align="left">Mandatory</th>
-                <th align="left">Description</th>
+                <th style="text-align: left">Property</th>
+                <th style="text-align: left">Value</th>
+                <th style="text-align: left">Mandatory</th>
+                <th style="text-align: left">Description</th>
             </tr>
             </thead>
+
             <tbody>
             <tr>
-                <td align="left">couponId</td>
-                <td align="left">Integer</td>
-                <td align="left">Yes</td>
-                <td align="left">The Unique Coupon ID that the user saved.</td>
+                <td style="text-align: left">couponId</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Unique Coupon ID that the user saved.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">delete</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">Pass 1 to this paramter if user deletes the coupon</td>
             </tr>
             </tbody>
         </table>
 
-        <h5>
-            <a id="user-content-example-request-4" class="anchor" href="#example-request-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Request</h5>
+        <h5 id="toc_31">Example Request</h5>
 
         <p>Update Save Count for Coupon with ID 861.</p>
 
-<pre><code>/v4/couponapp/saveCoupon?key={YourAPIKey}&amp;couponId=861
-</code></pre>
+        <pre><code>/v4/couponapp/saveCoupon?key={YourAPIKey}&amp;couponId=861</code></pre>
 
-        <h4>
-            <a id="user-content-response-properties-3" class="anchor" href="#response-properties-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response Properties</h4>
+        <h4 id="toc_32">Response Properties</h4>
 
         <p>Response returns true/false on success or error with message.</p>
 
-        <h5>
-            <a id="user-content-example-response-4" class="anchor" href="#example-response-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Response</h5>
+        <h5 id="toc_33">Example Response</h5>
 
 <pre><code>{
-    "error": false,
-    "msg": "Coupon Save Coupon Updated!"
-}
-</code></pre>
+    &quot;error&quot;: false,
+    &quot;msg&quot;: &quot;Coupon Save Count Updated!&quot;
+}</code></pre>
 
-        <h3>
-            <a id="user-content-term-of-use-inquiry" class="anchor" href="#term-of-use-inquiry" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="term-of-use-inquiry">Term of Use Inquiry</a>
-        </h3>
+        <h3 id="toc_34"><a name="update-store-save-count">Update Store Save Count</a></h3>
+
+        <h4 id="toc_35">Resource URI</h4>
+
+        <pre><code>/v4/couponapp/saveStore</code></pre>
+
+        <h4 id="toc_36">Resource Properties</h4>
+
+        <p>Below are all the available properties of the Coupon Save Count Update entity.   </p>
+
+        <table>
+            <thead>
+            <tr>
+                <th style="text-align: left">Property</th>
+                <th style="text-align: left">Value</th>
+                <th style="text-align: left">Mandatory</th>
+                <th style="text-align: left">Description</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td style="text-align: left">storeId</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">Yes</td>
+                <td style="text-align: left">The Unique Store ID(s) that the user saved. For Multiple IDs, add &#39;|&#39; in between IDs.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left">delete</td>
+                <td style="text-align: left">Integer</td>
+                <td style="text-align: left">No</td>
+                <td style="text-align: left">Pass 1 to this paramter if user deletes the coupon</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h5 id="toc_37">Example Request</h5>
+
+        <p>Update Save Count for Store #78 &amp; Store #21.</p>
+
+        <pre><code>/v4/couponapp/saveCoupon?key={YourAPIKey}&amp;storeId=78|21</code></pre>
+
+        <h4 id="toc_38">Response Properties</h4>
+
+        <p>Response returns true/false on success or error with message.</p>
+
+        <h5 id="toc_39">Example Response</h5>
+
+<pre><code>{
+    &quot;error&quot;: false,
+    &quot;msg&quot;: &quot;Store Save Count Updated!&quot;
+    }</code></pre>
+
+        <h3 id="toc_40"><a name="terms-of-use-inquiry">Term of Use Inquiry</a></h3>
 
         <p>This API Request will return Terms of Use as a string with html encoded characters.</p>
 
-        <h4>
-            <a id="user-content-resource-uri-4" class="anchor" href="#resource-uri-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource URI</h4>
+        <h4 id="toc_41">Resource URI</h4>
 
-<pre><code>/v4/couponapp/term
-</code></pre>
+        <pre><code>/v4/couponapp/term</code></pre>
 
-        <h4>
-            <a id="user-content-response-properties-4" class="anchor" href="#response-properties-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response Properties</h4>
+        <h4 id="toc_42">Response Properties</h4>
 
         <p>Response returns true/false on success or error.</p>
 
-        <h5>
-            <a id="user-content-example-response-5" class="anchor" href="#example-response-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Response</h5>
+        <h5 id="toc_43">Example Response</h5>
 
 <pre><code>{
-    msg: "",
+    msg: &quot;&quot;,
     errorCode: 0,
     error: false,
-    results: "&amp;lt;p&amp;gt;To better serve you and to clarify our service, we have drawn up an agreement of our terms and conditions. In order to use our service, you must read and accept all of the terms and conditions of this agreement and in the Privacy Policy. If you do not agree to be bound by the terms after you read this Agreement, you may not use our service.&amp;lt;/p&amp;gt;&amp;lt;br&amp;gt; &amp;lt;h3&amp;gt;1. The Service and Terms&amp;lt;/h3&amp;gt; &amp;lt;p&amp;gt; Fusion Web, LLC (referred to hereafter
-}
-</code></pre>
+    results: &quot;&amp;lt;p&amp;gt;To better serve you and to clarify our service, we have drawn up an agreement of our terms and conditions. In order to use our service, you must read and accept all of the terms and conditions of this agreement and in the Privacy Policy. If you do not agree to be bound by the terms after you read this Agreement, you may not use our service.&amp;lt;/p&amp;gt;&amp;lt;br&amp;gt; &amp;lt;h3&amp;gt;1. The Service and Terms&amp;lt;/h3&amp;gt; &amp;lt;p&amp;gt; Fusion Web, LLC (referred to hereafter
+}</code></pre>
 
-        <h3>
-            <a id="user-content-privacy-policy-inquiry" class="anchor" href="#privacy-policy-inquiry" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="privacy-policy-inquiry">Privacy Policy Inquiry</a>
-        </h3>
+        <h3 id="toc_44"><a name="privacy-policy-inquiry">Privacy Policy Inquiry</a></h3>
 
         <p>This API Request will return Privacy Policy as a string with html encoded characters.</p>
 
-        <h4>
-            <a id="user-content-resource-uri-5" class="anchor" href="#resource-uri-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource URI</h4>
+        <h4 id="toc_45">Resource URI</h4>
 
-<pre><code>/v4/couponapp/privacy
-</code></pre>
+        <pre><code>/v4/couponapp/privacy</code></pre>
 
-        <h4>
-            <a id="user-content-response-properties-5" class="anchor" href="#response-properties-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response Properties</h4>
+        <h4 id="toc_46">Response Properties</h4>
 
         <p>Response returns true/false on success or error.</p>
 
-        <h5>
-            <a id="user-content-example-response-6" class="anchor" href="#example-response-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Response</h5>
+        <h5 id="toc_47">Example Response</h5>
 
 <pre><code>{
-    msg: "",
+    msg: &quot;&quot;,
     errorCode: 0,
     error: false,
-    results: "&amp;lt;p&amp;gt;Here at dealsplus we recognize that your privacy is very important, and to keep you informed about our privacy practices we ask that you please read the guidelines described below. Keep in mind that because dealsplus is a growing website and internet technologies are constantly evolving, these guidelines are subject to change and any said changes will be posted on this page. Any material changes from current practices will be posted on the main page of this website to see ..."
-}
-</code></pre>
+    results: &quot;&amp;lt;p&amp;gt;Here at dealsplus we recognize that your privacy is very important, and to keep you informed about our privacy practices we ask that you please read the guidelines described below. Keep in mind that because dealsplus is a growing website and internet technologies are constantly evolving, these guidelines are subject to change and any said changes will be posted on this page. Any material changes from current practices will be posted on the main page of this website to see ...&quot;
+    }</code></pre>
 
-        <h2>
-            <a id="user-content-api-request-url" class="anchor" href="#api-request-url" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="api-request-url">API Request URL</a>
-        </h2>
+        <h2 id="toc_48"><a name="api-request-url">API Request URL</a></h2>
 
         <p>This section lists all the API Request URLs with parameters for all pages on the app. All pages that requires an api call on the app are listed here.</p>
 
-        <h3>
-            <a id="user-content-store-selection-page" class="anchor" href="#store-selection-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="store-selection">Store Selection Page</a>
-        </h3>
+        <h3 id="toc_49"><a name="store-selection">Store Selection Page</a></h3>
 
-<pre><code>/v4/couponapp/store
-</code></pre>
+        <pre><code>/v4/couponapp/store</code></pre>
 
-        <h3>
-            <a id="user-content-home-page" class="anchor" href="#home-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="home">Home Page</a>
-        </h3>
+        <h3 id="toc_50"><a name="home">Home Page</a></h3>
 
-<pre><code>/v4/couponapp/coupon?storeId={savedStoreId1|savedStoreId2|...}
-</code></pre>
+        <pre><code>/v4/couponapp/coupon?storeId={savedStoreId1|savedStoreId2|...}</code></pre>
 
-        <h3>
-            <a id="user-content-popular-page" class="anchor" href="#popular-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="popular">Popular Page</a>
-        </h3>
+        <h3 id="toc_51"><a name="popular">Popular Page</a></h3>
 
-<pre><code>/v4/couponapp/coupon
-</code></pre>
+        <pre><code>/v4/couponapp/coupon</code></pre>
 
-        <h3>
-            <a id="user-content-my-store-page" class="anchor" href="#my-store-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="my-store">My Store Page</a>
-        </h3>
+        <h3 id="toc_52"><a name="my-store">My Store Page</a></h3>
 
-<pre><code>/v4/couponapp/store?storeId={savedStoreId1|savedStoreId2|...}
-</code></pre>
+        <h5 id="toc_53">My Store Section</h5>
 
-        <h3>
-            <a id="user-content-search-store-page" class="anchor" href="#search-store-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="search-store">Search Store Page</a>
-        </h3>
+        <pre><code>/v4/couponapp/store?storeId={savedStoreId1|savedStoreId2|...}</code></pre>
 
-<pre><code>/v4/couponapp/search?keyword={yourSearchKeyWord}
-</code></pre>
+        <h5 id="toc_54">Suggested Store Section</h5>
 
-        <h3>
-            <a id="user-content-store-page" class="anchor" href="#store-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="store">Store page</a>
-        </h3>
+        <pre><code>/v4/couponapp/store?storeId={savedStoreId1|savedStoreId2|...}&amp;excludeStores=1</code></pre>
 
-        <h5>
-            <a id="user-content-all-tab" class="anchor" href="#all-tab" aria-hidden="true"><span class="octicon octicon-link"></span></a>ALL Tab</h5>
+        <h3 id="toc_55"><a name="search-store">Search Store Page</a></h3>
 
-<pre><code>/v4/couponapp/coupon?storeId={storeId}
-</code></pre>
+        <h5 id="toc_56">Search Result &amp; Search Auto-Complete</h5>
 
-        <h5>
-            <a id="user-content-online-tab" class="anchor" href="#online-tab" aria-hidden="true"><span class="octicon octicon-link"></span></a>ONLINE Tab</h5>
+        <pre><code>/v4/couponapp/search?keyword={yourSearchKeyWord}</code></pre>
 
-<pre><code>/v4/couponapp/coupon?storeId={storeId}&amp;type=online
-</code></pre>
+        <h5 id="toc_57">Recently Visited Stores</h5>
 
-        <h5>
-            <a id="user-content-in-store-tab" class="anchor" href="#in-store-tab" aria-hidden="true"><span class="octicon octicon-link"></span></a>IN-STORE Tab</h5>
+        <pre><code>/v4/couponapp/store?storeId={savedStoreId1|savedStoreId2|...}&amp;recentHistory=1</code></pre>
 
-<pre><code>/v4/couponapp/coupon?storeId={storeId}&amp;type=instore
-</code></pre>
+        <h3 id="toc_58"><a name="store">Store page</a></h3>
 
-        <h3>
-            <a id="user-content-saved-coupon-page" class="anchor" href="#saved-coupon-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="saved-coupon">Saved Coupon Page</a>
-        </h3>
+        <h5 id="toc_59">ALL Tab</h5>
 
-        <h5>
-            <a id="user-content-all-tab-1" class="anchor" href="#all-tab-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>ALL Tab</h5>
+        <pre><code>/v4/couponapp/coupon?storeId={storeId}</code></pre>
 
-<pre><code>/v4/couponapp/coupon?couponId={savedCouponId1|savedCouponId2|...}
-</code></pre>
+        <h5 id="toc_60">ONLINE Tab</h5>
 
-        <h5>
-            <a id="user-content-expiring-tab" class="anchor" href="#expiring-tab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Expiring Tab</h5>
+        <pre><code>/v4/couponapp/coupon?storeId={storeId}&amp;type=online</code></pre>
 
-<pre><code>/v4/couponapp/coupon?couponId={savedCouponId1|savedCouponId2|...}&amp;expireSoon=1
-</code></pre>
+        <h5 id="toc_61">IN-STORE Tab</h5>
 
-        <h3>
-            <a id="user-content-terms-of-use-page" class="anchor" href="#terms-of-use-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="term-of-use">Terms of Use Page</a>
-        </h3>
+        <pre><code>/v4/couponapp/coupon?storeId={storeId}&amp;type=instore</code></pre>
 
-<pre><code>/v4/couponapp/term
-</code></pre>
+        <h3 id="toc_62"><a name="saved-coupon">Saved Coupon Page</a></h3>
 
-        <h3>
-            <a id="user-content-privacy-policy-page" class="anchor" href="#privacy-policy-page" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="privacy-policy">Privacy Policy Page</a>
-        </h3>
+        <h5 id="toc_63">ALL Tab</h5>
 
-<pre><code>/v4/couponapp/privacy
-</code></pre>
+        <pre><code>/v4/couponapp/coupon?couponId={savedCouponId1|savedCouponId2|...}</code></pre>
+
+        <h5 id="toc_64">Expiring Tab</h5>
+
+        <pre><code>/v4/couponapp/coupon?couponId={savedCouponId1|savedCouponId2|...}&amp;expireSoon=1</code></pre>
+
+        <h3 id="toc_65"><a name="term-of-use">Terms of Use Page</a></h3>
+
+        <pre><code>/v4/couponapp/term</code></pre>
+
+        <h3 id="toc_66"><a name="privacy-policy">Privacy Policy Page</a></h3>
+
+        <pre><code>/v4/couponapp/privacy</code></pre>
+
 </article>
   </div>
       </section>
